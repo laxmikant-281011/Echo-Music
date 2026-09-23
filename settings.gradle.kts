@@ -16,7 +16,7 @@ dependencyResolutionManagement {
 //     id("org.gradle.toolchains.foojay-resolver-convention") version("1.0.0")
 // }
 
-rootProject.name = "Mine Music"
+rootProject.name = "Anshika"
 include(
     ":app",
     ":innertube",
