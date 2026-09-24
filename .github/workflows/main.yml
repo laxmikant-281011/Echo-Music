@@ -21,6 +21,11 @@ jobs:
     - name: Grant Execute Permissions
       run: chmod +x gradlew
 
+    - name: Create Debug Keystore
+      run: |
+        mkdir -p ~/.android
+        keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
     - name: Compile APK
       run: ./gradlew assembleDebug --no-daemon
 
@@ -28,5 +33,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: CustomEchoMusic
-        path: app/build/outputs/apk/debug/app-debug.apk
-        
+        path: app/build/outputs/apk/debug/app-debug.app
