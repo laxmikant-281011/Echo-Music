@@ -34,6 +34,5 @@ jobs:
     - name: Upload Finished APK
       uses: actions/upload-artifact@v4
       with:
-        name: CustomEchoMusic
-        path: app/build/outputs/apk/universalGms/Debug/*.apk
-        
+        name: MusicbyLaxmikant
+        path: "**/build/outputs/apk/**/*.apk"
